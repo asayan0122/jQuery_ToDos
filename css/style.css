@@ -1,0 +1,35 @@
+body {
+  background: #d8d8d8;
+}
+.main-container {
+  width: 980px;
+  margin: 15px auto;
+}
+.lists_wrap {
+  display: flex;
+}
+.lists_wrap-inner {
+  height: 100px;
+  background: #fff;
+  border: solid 1px;
+  height: 40px;
+  border-radius: 2px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 15px;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+.lists_wrap-inner .cards {
+  width: 100%;
+  min-height: 180px;
+  background: #fff;
+  text-align: center;
+  border-radius: 3px;
+  border: solid 1px;
+  border-color: rgb(34, 34, 34);
+  margin-bottom: 2px;
+}
+.lists_wrap-inner .cards:hover {
+  cursor: pointer;
+}
