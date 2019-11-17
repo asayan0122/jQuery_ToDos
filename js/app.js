@@ -1,8 +1,7 @@
 $(function() {
   $(".todo_reg_btn").on("click", function(e) {
-    //リロードを無くす
     e.preventDefault();
-
+ 
     var todolist =
       '<div class="cards js-list">' +
       $(".js_val_task").val() +
