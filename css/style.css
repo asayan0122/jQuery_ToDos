@@ -33,3 +33,6 @@ body {
 .lists_wrap-inner .cards:hover {
   cursor: pointer;
 }
+.cards_sampleTask label {
+  margin-bottom: 0px;
+}

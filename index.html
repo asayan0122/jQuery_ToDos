@@ -1,86 +1,119 @@
 <!DOCTYPE html>
 <html lang="ja">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>todos</title>
-  <link href="./css/bootstrap.min.css" rel="stylesheet">
-  <link type="text/css" rel="stylesheet" href="./css/style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>todos</title>
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
-<!-- heading -->
-<nav class="navbar navbar-light bg-light">
-    <span class="navbar-brand mb-0 h1">jQuery_ToDos</span>
-  </nav>
-  <div class="main main-container">
-    <secton class="modal-container">
-      <button type="button" class="btn btn-success" data-toggle="modal" data-target=".js_modal_close">
-        新規登録
-      </button>
+  <body>
+    <!-- heading -->
+    <nav class="navbar navbar-light bg-light">
+      <span class="navbar-brand mb-0 h1">jQuery_ToDos</span>
+    </nav>
+    <div class="main main-container">
+      <secton class="modal-container">
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target=".js_modal_close">
+          新規登録
+        </button>
 
-      <!-- Modal -->
-      <div class="modal js_modal_close" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">タスク登録</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <form action="">
-                <div class="form-group">
-                  <label for="recipient-name" class="form__task">タスク</label>
-                  <input type="text" class="form-control js_val_task" placeholder="" />
-                </div>
-                <div class="form-group">
-                  <label for="message-name" class="form__details">詳細</label>
-                  <textarea type="text" class="form-control js_val_details" placeholder="" /></textarea>
-                </div>
-                <div class="form-group">
+        <!-- Modal -->
+        <div class="modal js_modal_close" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">タスク登録</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <form action="">
+                  <div class="form-group">
+                    <label for="recipient-name" class="form__task">タスク</label>
+                    <input type="text" class="form-control js_val_task" placeholder="" />
+                  </div>
+                  <div class="form-group">
+                    <label for="message-name" class="form__details">詳細</label>
+                    <textarea type="text" class="form-control js_val_details" placeholder="" /></textarea>
+                  </div>
+                  <div class="form-group">
                     <label for="recipient-name" class="form__limit">期限</label>
                     <input type="date" class="form-control js_val_limit" placeholder="" />
                   </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">
-                閉じる
-              </button>
-              <button type="button" class="btn btn-primary todo_reg_btn">
-                登録する
-              </button>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                  閉じる
+                </button>
+                <button type="button" class="btn btn-primary todo_reg_btn">
+                  登録する
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      </section>
-   <!-- タスク -->
-   <section class="lists-container">
-      <div class="lists_wrap row">
-        <div class="col-sm lists_wrap-inner js_todo_list" id="task_list">
-        <p>タスク一覧</p>
-        </div>
-        <div class="col-sm lists_wrap-inner" id="progress">
-        <p>進捗中</p>
-        </div>
-        <div class="col-sm lists_wrap-inner" id="conplete">
-        <p>完了</p>
-        </div>
-      </div>
-    </section>
-  </div>
-  <script src="./js/jquery-3.4.1.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
-  </script>
-  <script src="./js/bootstrap.min.js"></script>
-  <script src="./Sortable/Sortable.min.js"></script>
-  <script src="./js/app.js"></script>
+        </section>
+        <!-- タスク -->
+        <section class="lists-container">
+          <div class="lists_wrap row">
+            <!---登録タスク-->
+            <div class="col-sm lists_wrap-inner js_todo_list" id="task_list">
+              <p>タスク一覧</p>
+            </div>
+            <!---進捗タスク-->
+            <div class="col-sm lists_wrap-inner">
+              <p>進捗中</p>
+              <div id="progress">
+                <div class="cards js-list">
+                  <!--sample1-->
+                  <label style="margin-bottom:0px;">sampleTask1</label>
+                  <br>
+                  <label style="margin-bottom:0px;">タスクは移動できます</label>
+                  <br>
+                  <label style="margin-bottom:0px;">年-月-日</label> <br>
+                  <button type="button" class="btn btn-outline-secondary js-click-done">完了</button>
+                </div>
+              </div>
+            </div>
+            <!---完了タスク-->
+            <div class="col-sm lists_wrap-inner" id="conplete">
+              <p>完了</p>
+              <!--sample2-->
+              <div class="cards js-list">
+                <label style="margin-bottom:0px;">sampleTask2</label>
+                <br>
+                <label style="margin-bottom:0px;">ドラック&ドロップできます</label>
+                <br>
+                <label style="margin-bottom:0px;">年-月-日</label> <br>
+                <button type="button" class="btn btn-outline-secondary js-click-done">完了</button>
+              </div>
 
-</body>
+              <!--sample3-->
+              <div class="cards js-list">
+                <label style="margin-bottom:0px;">sampleTask3</label>
+                <br>
+                <label style="margin-bottom:0px;">完了したら削除できます</label>
+                <br>
+                <label style="margin-bottom:0px;">年-月-日</label> <br>
+                <button type="button" class="btn btn-outline-secondary js-click-done">完了</button>
+              </div>
+            </div>
+          </div>
+        </section>
+    </div>
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">
+    </script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./Sortable/Sortable.min.js"></script>
+    <script src="./js/app.js"></script>
+
+  </body>
 
 </html>
